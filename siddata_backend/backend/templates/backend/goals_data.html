@@ -1,0 +1,74 @@
+<h1>Zielformulierungen</h1>
+
+<div id="loading"><img src='ajax-loader.gif'><p style="color:red;">Daten werden geladen...</p></div>
+<div class="pagination" style="margin:1em;">
+    <span class="step-links">
+        {% if goals.has_previous %}
+            <button class="paginator" data-page="{{ goals.previous_page_number }}">Zurück</button>
+        {% endif %}
+
+        <span class="current">
+            Seite
+            <select class="pageselector">
+                {% with ''|center:goals.paginator.num_pages as range %}
+                    {% for _ in range %}
+                        <option value="{{ forloop.counter }}" {%  if forloop.counter == goals.number %}selected{% endif %}>{{ forloop.counter }}</option>
+                    {% endfor %}
+                {% endwith %}
+            </select>
+            / {{ goals.paginator.num_pages }}.
+        </span>
+
+        {% if goals.has_next %}
+            <button class="paginator" data-page="{{ goals.next_page_number }}">Weiter</button>
+        {% endif %}
+
+        {% if goals.paginator.num_pages > 1 %}
+            &nbsp; &nbsp; <button class="nopaging">Alle Ergebnisse auf einer Seite</button>
+        {% endif %}
+    </span>
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>#</th><th>Ziel</th>
+        </tr>
+        {% for row in goals %}
+            <tr>
+            <td>{{ row.id|add:offset|stringformat:"02d" }}</td>
+            <td><strong>{{ row.goal }}</strong>
+                {% for study in row.user.siddatauserstudy_set.all %}
+                    <br>{{ study.degree.name }} {{study.subject.name}} ({{study.semester}}. Sem.) &nbsp;
+                {% endfor %}
+            </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="pagination" style="margin:1em;">
+    <span class="step-links">
+        {% if goals.has_previous %}
+            <button class="paginator" data-page="{{ goals.previous_page_number }}">Zurück</button>
+        {% endif %}
+
+        <span class="current">
+            Seite
+            <select class="pageselector">
+                {% with ''|center:goals.paginator.num_pages as range %}
+                    {% for _ in range %}
+                        <option value="{{ forloop.counter }}" {%  if forloop.counter == goals.number %}selected{% endif %}>{{ forloop.counter }}</option>
+                    {% endfor %}
+                {% endwith %}
+            </select>
+            / {{ goals.paginator.num_pages }}.
+        </span>
+
+        {% if goals.has_next %}
+            <button class="paginator" data-page="{{ goals.next_page_number }}">Weiter</button>
+        {% endif %}
+
+        {% if goals.paginator.num_pages > 1 %}
+            &nbsp; &nbsp; <button class="nopaging">Alle Ergebnisse auf einer Seite</button>
+        {% endif %}
+    </span>
+</div>

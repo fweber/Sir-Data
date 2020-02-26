@@ -1,0 +1,46 @@
+{% extends "backend/base.html" %}
+{% block title %} | Goal-Rating{% endblock %}
+{% block head %}
+<style>
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+            <h1>Ziele sortieren</h1>
+            <form action="{% url 'add_rating' %}" method="POST">
+
+            <div>
+                <table style="width:100%" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Goals / Categories</th>
+                        {% for c in rate_categories %}
+                        <th >{{c.super_category_id.super_category_id.name}} {{c.super_category_id.name}} {{c.name}}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for g in rate_goals %}
+                        <tr>
+                            <th>{{g.goal}}</th>
+                            {% for c in rate_categories %}
+                                <td align="center">
+                                    <input type="hidden" id="{{ g.id }}-{{ c.id }}" name="{{ g.id }}-{{ c.id }}" value="off">
+                                    <input type="checkbox" id="{{ g.id }}.{{ c.id }}" name="{{ g.id }}-{{ c.id }}" >
+                                    <label for="{{ g.id }}.{{ c.id }}">klick</label>
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <input type="submit" value="rate">
+            </form>
+
+{% endblock %}

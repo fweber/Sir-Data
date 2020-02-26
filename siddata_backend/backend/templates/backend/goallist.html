@@ -1,0 +1,34 @@
+{% extends "backend/base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+        <form id="facet-form">
+            <h2>Überblick</h2>
+            <ul>
+                <li>{{ num_users }} NutzerInnen</li>
+                <li>{{ num_goals }} Ziele</li>
+            </ul>
+            <h2>Abschlüsse</h2>
+                {% for d in degrees %}
+                    <input type="checkbox" name="degree-{{ d.id }}" id="degree-{{ d.id }}">
+                    <label for="subject-{{ d.id }}">{{ d.name }} ({{ d.num }})</label>
+                    <br>
+                {% endfor %}
+            <h2>Studiengänge</h2>
+                {% for s in subjects %}
+                    <input type="checkbox" name="subject-{{ s.id }}" id="subject-{{ s.id }}">
+                    <label for="subject-{{ s.id }}">{{ s.name }} ({{ s.num }})</label>
+                    <br>
+                {% endfor %}
+            </ul>
+        </form>
+    </div>
+    <div class="col-8" id="goals-content">
+    </div>
+  </div>
+</div>
+
+<script src="backend.js"></script>
+{% endblock %}

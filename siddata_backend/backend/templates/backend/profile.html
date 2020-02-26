@@ -1,0 +1,160 @@
+{% extends "backend/base.html" %}
+{% block title %} | Goal-Rating{% endblock %}
+{% block head %}
+
+<!-- instead of a CSS style sheet style is added in the style tag -->
+<style>
+    body {
+        margin: 0;
+        font-family: Verdana;
+    }
+    #messages{
+      overflow-y: scroll;
+      max-height: 200px;
+      margin: 0 5px;
+      background:#fff;
+    }
+    .msg-right{
+        background:#3BA1EE;
+        padding:10px;
+        text-align:right;
+        color:#fff;
+        margin:5px;
+        width:70%;
+        float:right;
+        margin-right: 30px;
+    }
+    .msg-left{
+        background:#ddd;
+        padding:10px;
+        margin:5px;
+         width:70%;
+        float:left;
+      margin-left: 30px;
+    }
+    .msg-left:before {
+       width: 0;
+        height: 0;
+        content: "";
+        top: 9px;
+        left: -28px;
+        position: relative;
+        border-style: solid;
+        border-width: 20px 0px 0px 20px;
+        border-color: #ddd transparent transparent transparent;
+
+    }
+    .msg-right:after {
+       width: 0;
+        height: 0;
+        content: "";
+        top: 9px;
+        left: 29px;
+        position: relative;
+        border-style: solid;
+        border-width: 20px 20px 00px 0px;
+        border-color: #3BA1EE transparent transparent transparent;
+
+
+    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ddd;
+  position: fixed;
+  top: 220px;
+  width: 80%;
+    left: 10%;
+    position: fixed;
+    z-index: 9;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #555;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+    color: white;
+}
+
+.active {
+  background-color: #6c80a9d2;
+    color: white;
+}
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div style="margin:0; margin-right:10px; padding: 0em 1em 1em 1em; background-color:white;text-align:center; height:300px; width:100%; z-index: 8; position: fixed; left: 0%">    </div>
+<div align="center">
+    <img src="/static/images/sirdata-logo.png" style="height: 200px; padding: 0; position: fixed; z-index: 10; left: 33%; top:15px">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<br>
+<!-- Left column -->
+<div>
+    <div class="row">
+        <div style="width:20%">
+            <ul>
+                <li><a href="show_oer">Home</a></li>
+                <li><a href="learning_content">Recommendations</a></li>
+                <li><a href="learning_playground">Badge Academy</a></li>
+                <li><a href="learning_buddies">Learning Buddies</a></li>
+                <li><a class="active" href="profile">Profile</a></li>
+            </ul>
+            <div align="center">
+                    <img src={{usrimage}} style="height: 200px">
+            </div>
+            <br>
+                <p>Name: {{user.name}}</p>
+                <p>Country: {{user.country}}</p>
+                <p>Interests: {{user.interests}}</p>
+                <p>SIR DATA score: {{score}}</p>
+        </div>
+
+        <div style="width:10%"></div>
+
+        <div style="width:70%">
+            <h3 style="font: bolder; color: #0b614bff">My Badges</h3>
+            <h6>This is what I have archieved so far:</h6>
+
+            {% for badge in Badges %}
+                <br>
+                <div class="row">
+                    <div style="width:20%">
+                        <img src="/static/images/krone.png" style="height: 100px">
+                    </div>
+                    <div>
+                        <br>
+                        <h4>{{badge.name}}</h4>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+
+        <br>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

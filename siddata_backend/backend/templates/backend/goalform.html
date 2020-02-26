@@ -1,0 +1,8 @@
+{% extends "backend/base.html" %}
+
+{% block content %}
+    <h1>Ziel eintragen</h1>
+    <form action="{% url 'add_goal' %}" method="POST">
+        <input type="text" size="60" name="goal">
+    </form>
+{% endblock %}

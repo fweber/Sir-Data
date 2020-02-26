@@ -1,0 +1,223 @@
+    {
+    	"lists":
+    	[
+    		{
+    			"id": "abroad",
+    			"goals":
+    			[
+    				{
+    					"goal": "Auslandsaufenthalt auf Bali",
+    					"id": "1",
+    					"list_id": "abroad",
+    					"activities":
+    					[
+    						{
+    							"id": "1",
+    							"goal": "1",
+    							"type": "course",
+    							"course": "a07535cf2f8a72df33c12ddfa4b53dde",
+    							"feedback": "verybad",
+    							"feedback_text": "Was soll ich mit dieser Veranstaltung?",
+    							"status": "new",
+    							"question_text": "",
+    							"question_answertype": "",
+    							"question_answer": "",
+    							"notes":
+    							[
+    								"Dies ist eine Notiz.",
+    								"Dies ist noch eine."
+    							],
+    							"due_date": 1592486723,
+    							"order": "",
+    							"title": "Test-Lehrveranstaltung",
+    							"description": "Dies ist eine Test-Lehrveranstaltung. Sie könnte Ihnen beim Testen helfen.",
+    							"url": "",
+    							"category": "",
+    							"place": "",
+    							"date": ""
+    						}, {
+    							"id": "3",
+    							"goal": "1",
+    							"type": "course",
+    							"course": "a07535cf2f8a72df33c12ddfa4b53dde",
+    							"feedback": "verybad",
+    							"feedback_text": "Was soll ich mit dieser Veranstaltung?",
+    							"status": "new",
+    							"question_text": "",
+    							"question_answertype": "",
+    							"question_answer": "",
+    							"notes":
+    							[
+    								"Dies ist eine Notiz.",
+    								"Dies ist noch eine."
+    							],
+    							"due_date": 1592486723,
+    							"order": "",
+    							"title": "Noch einmal die Test-Lehrveranstaltung",
+    							"description": "Dies ist eine Test-Lehrveranstaltung. Sie könnte Ihnen beim Testen helfen.",
+    							"url": "",
+    							"category": "",
+    							"place": "",
+    							"date": ""
+    						}, {
+    							"id": "5",
+    							"goal": "1",
+    							"type": "question",
+    							"course": "",
+    							"feedback": "",
+    							"feedback_text": "",
+    							"status": "new",
+    							"question_text": "Wo liegen deine Prioritäten in diesem Auslandsaufenthalt?",
+    							"question_answertype": "selection",
+    							"question_answer": "Spaß",
+    							"question_selectionanswers":[
+    								"Spaß",
+    								"Bildung",
+    								"Sprachen"
+    							],
+    							"notes": [],
+    							"due_date": "",
+    							"order": "",
+    							"title": "Prioritäten",
+    							"url": "",
+    							"category": "",
+    							"place": "",
+    							"date": ""
+    						}
+    					]
+    				}
+    			]
+    		},
+    		{
+    			"id": "professions",
+    			"goals":
+    			[
+    				{
+    					"goal": "Ein Stud.IP-Plugin entwickeln",
+    					"id": "2",
+    					"list_id": "professions",
+    					"activities":
+    					[
+    						{
+    							"id": "2",
+    							"goal": "2",
+    							"type": "resource",
+    							"course": "",
+    							"feedback": "verygood",
+    							"feedback_text": "Das hilft mir extrem weiter!",
+    							"status": "active",
+    							"question_text": "",
+    							"question_answertype": "",
+    							"question_answer": "",
+    							"notes":
+    							[
+    								"Dies ist eine Notiz.",
+    								"Dies ist noch eine."
+    							],
+    							"due_date": 1562160769,
+    							"order": "",
+    							"title": "Stud.IP-Plugin-Tutorial",
+    							"description": "Hier finden Sie einen Einstieg in die Stud.IP-Plugin-Entwicklung",
+    							"url": "https://hilfe.studip.de/develop/Entwickler/PluginTutorial",
+    							"category": "",
+    							"place": "",
+    							"date": ""
+    						}, {
+    							"id": "4",
+    							"goal": "2",
+    							"type": "resource",
+    							"course": "",
+    							"feedback": "",
+    							"feedback_text": "",
+    							"status": "new",
+    							"question_text": "",
+    							"question_answertype": "",
+    							"question_answer": "",
+    							"notes":
+    							[
+    								"Dies ist eine Notiz.",
+    								"Dies ist noch eine."
+    							],
+    							"due_date": 1562160769,
+    							"order": "",
+    							"title": "PHP Dokumentation",
+    							"description": "Hier finden Sie alles zur Programmiersprache PHP.",
+    							"url": "https://php.net",
+    							"category": "",
+    							"place": "",
+    							"date": ""
+    						}, {
+    							"id": "9",
+    							"goal" : "2",
+    							"type":"resource",
+    							"status":"done",
+    							"feedback":"good",
+    							"title":"Stud.IP-Repositories ansehen",
+    							"description":"Hier liegen die Stud.IP-Quelldateien",
+    							"url":"https://develop.studip.de/trac/"
+    						}
+    					]
+    				}, {
+    					"goal": "Experte werden",
+    					"id": "3",
+    					"list_id": "professions",
+    					"activities":
+    					[
+    						{
+    							"id": "6",
+    							"goal": "3",
+    							"type": "question",
+    							"course": "",
+    							"feedback": "",
+    							"feedback_text": "",
+    							"status": "new",
+    							"question_text": "Worin möchten Sie Experte werden?",
+    							"question_answertype": "selection",
+    							"question_answer": "",
+    							"question_selectionanswers": [
+    								"Physik",
+    								"Chemie",
+    								"Warhammer 40.000 lore"
+    							],
+    							"notes": [],
+    							"due_date": "",
+    							"order": "",
+    							"title": "Worin?",
+    							"description": "Ihr interesse ist noch wage formuliert. Lassen mich Ihnen dabei helfen, es zu konkretisieren."
+    						}, {
+    							"id":"7",
+    							"goal":"3",
+    							"type":"resource",
+    							"status":"new",
+    							"title":"Auch ein Experte",
+    							"description":"Kant war auch ein Experte",
+    							"url":"https://en.wikipedia.org/wiki/Immanuel_Kant"
+    						}, {
+    							"id":"8",
+    							"goal":"3",
+    							"type": "question",
+    							"title":"Lieblingsexperte",
+    							"status":"new",
+    							"question_text":"Wer ist Ihr Lieblingsexperte?",
+    							"question_answertype":"selection",
+    							"question_answer":"",
+    							"question_selectionanswers":[
+    								"Kant",
+    								"Niezsche",
+    								"Platon",
+    								"Socrates",
+    								"Aristoteles",
+    								"Maciavelli",
+    								"Caesar",
+    								"Augustus",
+    								"Einstein",
+    								"Freud",
+    								"Shakespear"
+    							]
+    						}
+    					]
+    				}
+    			]
+    		}
+    	]
+    }

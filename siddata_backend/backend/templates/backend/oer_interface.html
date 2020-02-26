@@ -1,0 +1,186 @@
+{% extends "backend/base.html" %}
+{% block title %} | Goal-Rating{% endblock %}
+{% block head %}
+
+<!-- instead of a CSS style sheet style is added in the style tag -->
+<style>
+    body {
+        margin: 0;
+        font-family: Verdana;
+    }
+    #messages{
+      overflow-y: scroll;
+      max-height: 500px;
+      margin: 0 5px;
+      background:#fff;
+    }
+    .msg-right{
+        background:#ddd;
+        padding:10px;
+        text-align:right;
+        margin:5px;
+        width:70%;
+        float:right;
+        margin-right: 30px;
+    }
+    .msg-left{
+        background:#0b614bff;
+        color:#fff;
+        padding:10px;
+        margin:5px;
+         width:70%;
+        float:left;
+      margin-left: 30px;
+    }
+    .msg-left:before {
+       width: 0;
+        height: 0;
+        content: "";
+        top: 9px;
+        left: -28px;
+        position: relative;
+        border-style: solid;
+        border-width: 20px 0px 0px 20px;
+        border-color: #0b614bff transparent transparent transparent;
+
+    }
+    .msg-right:after {
+       width: 0;
+        height: 0;
+        content: "";
+        top: 9px;
+        left: 29px;
+        position: relative;
+        border-style: solid;
+        border-width: 20px 20px 00px 0px;
+        border-color: #ddd transparent transparent transparent;
+
+
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #ddd;
+      position: fixed;
+      top: 220px;
+      width: 80%;
+        left: 10%;
+        position: fixed;
+        z-index: 9;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: #555;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #555;
+        color: white;
+    }
+
+    .active {
+      background-color: #6c80a9d2;
+        color: white;
+    }
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div style="margin:0; margin-right:10px; padding: 0em 1em 1em 1em; background-color:white;text-align:center; height:300px; width:100%; z-index: 8; position: fixed; left: 0%">    </div>
+<div align="center">
+    <img src="/static/images/sirdata-logo.png" style="height: 200px; padding: 0; position: fixed; z-index: 10; left: 33%; top:15px">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<br>
+
+<ul>
+    <li><a class="active" href="show_oer">Home</a></li>
+    <li><a href="learning_content">Recommendations</a></li>
+    <li><a href="learning_playground">Badge Academy</a></li>
+    <li><a href="learning_buddies">Learning Buddies</a></li>
+    <li><a href="profile">Profile</a></li>
+</ul>
+
+<!-- Left column -->
+<div>
+    <div class="row">
+        <div style="width:15%">
+            <br><br><br><br><br>
+            <div align="center">
+                <img src="/static/images/blue_logo.gif" style="height: 170px">
+            </div>
+            <h4 align="center">Sir Data</h4>
+            <h6 align="center">At your command!</h6>
+        </div>
+
+        <div style="width:5%"></div>
+
+<!-- Middle column -->
+        <div style="width:60%">
+            <!-- Chat History -->
+            <div class="container">
+                <div id="messages">
+                    {% for post in Chat_History%}
+                        {% if post.me %}
+                            <div class="msg-right">
+                                {{post.me}}
+                            </div>
+                        {% elif post.you %}
+                            <div class="msg-left">
+                                {{post.you}}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <script>$('#messages').scrollTop($('#messages')[0].scrollHeight);</script>
+
+            <!-- Text Input with button -->
+            <div>
+                <form action = "{% url 'show_oer' %}" method="POST">
+                    <div class="row">
+                        <div class="col-xs-9", style="width: 80%">
+                           <input type="text" id = "message" name = "message" placeholder = "Message..." class="form-control"  />
+                        </div>
+                        <div class="col-xs-3", style="width: 20%">
+                            <button type = "submit" value = "submit" style="background-color:#6c80a9d2 ",(click)="">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div style="width:5%"></div>
+
+<!-- Right Panel -->
+            <div style="width:15%">
+                <br><br><br><br><br>
+                <div align="center">
+                    <img src={{usrimage}} style="height: 170px; position: center">
+                </div>
+                <h4 align="center">{{user.name}}</h4>
+            </div>
+
+        <br>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
