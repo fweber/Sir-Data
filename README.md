@@ -1,5 +1,5 @@
 # Sir Data - Your Personal Education Butler
-X5gon Hackathon for the Good - Paris 25.02.2020
+This project was developed and prototyped at the X5gon Hackathon for the Good in Paris in February of 2020 by Saskia Bruhn, Marisa Wodrich and Felix Weber. The task was to develop Artificial Intelligence (AI) based technical solutions to unlock Open Educational Resources (OER) to progress towards the 17 Sustainability Goals as defined by the United Nations https://sdgs.un.org/goals.
 
 ## 1. Technical prerequisites 
 In siddata_backend the code of our django (python) project is located. To make it run on your machine, you need to install
